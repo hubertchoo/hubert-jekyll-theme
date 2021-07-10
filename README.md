@@ -1,8 +1,6 @@
-# Astral on Jekyll
+# Stellar on Jekyll
 
-This is a Jekyll version of 'Astral', by HTML5 UP.
-
-![Astral Theme](astral_theme.png)
+This is Stellar, my custom Jekyll theme. It is built on top of 'Astral' by HTML5 Up.
 
 # Installing the theme
 
@@ -12,47 +10,76 @@ Follow the instructions: https://github.com/benbalter/jekyll-remote-theme
 
 Set the `remote_theme` in your `_config.yml` as:
 ```yml
-remote_theme: hubertchoo/astral-jekyll-theme
+remote_theme: hubertchoo/stellar-jekyll-theme
 ```
 
 # Setting It Up
 
+## Home Page + Work Page Description
 You only have to edit the front matter in `index.markdown`
 ```yml
 layout: index
-title: YourTitle
 my_name: John Appleseed
 my_description: Student
-work_description: Phasellus enim sapien, blandit ullamcorper elementum eu, condimentum eu elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia luctus elit eget interdum.
+profilepic_path: my_photo.png
+work_description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 ```
 
-There are also some basic site settings in `_config.yml`.
+## Experience and Education
+Under the `_my_experience_education` directory, a sample MD file with the relevant front matter are provided. Merely make copies for the MD file for each entry and include the relevant information.
+```yml
+name: Test School
+icon_name: graduation-cap # FontAwesome Icon Name
+type: Education
+year: 2018
+date: 2018/12/01 # YYYY/MM/DD
+description: This is my test school.
+```
+Other available FontAwesome icons can be found at https://fontawesome.com/v5.15/icons?d=gallery&p=2&s=brands,regular,solid.
 
-To replace the placeholder images with your own, replace the files in `assets/images/`.
+## My Projects
+Under the `_my_projects` directory, a sample MD file with the relevant front matter are provided. Merely make copies for the MD file for each entry and include the relevant information.
+```yml
+thumbnail: /project_thumbnails/test.mp4 # MP4 Video
+name: TestProject
+description: This is a test project.
+```
+Store your MP4 project thumbnail in the `project_thumbnails` directory. The thumbnail will be autoplayed.
 
-# Added Features
-
-- Added 404 Page Not Found template to the theme.
-- Configure your social profiles in `_config.yml`.
-
+## Config.YML
+There are also some additional site settings in the `_config.yml` provided.
+Specifically, an additional configuration feature is the `socials` tag.
 ```yml
 socials:
   # Those that have blank urls will be ignored
   # You can add more of your desired socials
   # Set the names of the socials to be the same as the webicon
-  Github: https://www.text.com
+  Github: # This corresponds to the name of the FontAwesome Icon
+    username: "@hubertchoo"
+    link: https://github.com/hubertchoo/
   GitLab:
+    username:
+    link:
   Twitter:
+    username:
+    link:
   Instagram:
+    username:
+    link:
   LinkedIn:
+    username:
+    link:
   Facebook:
-```
+    username:
+    link:
 
-Other available icons can be found at https://fontawesome.com/v5.15/icons?d=gallery&p=2&s=brands,regular,solid
+```
+Those socials filled in will automatically be added as navigation tabs. You can add your own socials, as long as the names correspond the their Font Awesome icon.
+
 
 # Credits
 
-README from HTML5 UP:
+Below is the README for Astral from HTML5:
 
 ```
 Astral by HTML5 UP

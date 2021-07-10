@@ -1,0 +1,83 @@
+---
+layout: background
+---
+
+<style type="text/css" media="screen">
+  @keyframes appear {
+    from {opacity: 0;}
+    to {opacity: 1;}
+    
+  }
+
+  h1 {
+    margin: 30px 0;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+  body{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .main_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 0 auto;
+  }
+  .text_container {
+    margin: 10px auto;
+    max-width: 600px;
+    text-align: center;
+    animation: appear;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+  }
+  .footer{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 30px;
+    animation: appear;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+  }
+</style>
+
+
+<div class="main_container">
+  <div class="text_container">
+    <h1 style="color: black;">404</h1>
+    <p><strong style="color: black;">Page not found :(</strong></p>
+    <p style="color: black;">The requested page could not be found.</p>
+  </div>
+</div>
+
+<div class="footer">
+  <nav id="nav">
+    <a href="{{ site.url }}/{{ site.baseurl }}" class="icon solid fa-home"><span>Home</span></a>
+    {% for social_info in site.socials %}
+      {% if social_info[1].username %}
+        <a href="{{ social_info[1].link }}" class="icon brands fa-{{ social_info[0] | downcase }}"><span>{{ social_info[1].username }}</span></a>
+      {% endif %}
+    {% endfor %}
+    <a href="mailto: {{ site.email }}" class="icon solid fa-envelope"><span>{{ site.email }}</span></a>
+  </nav>
+</div>
+
+<script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
+<script>
+  var body = document.getElementsByTagName("body")[0];
+  body.style.height = $(window).height() + "px";
+  body.style.width = $(window).width() + "px";
+
+  $(window).on( "orientationchange", function( event ) {
+    // Timeout helps for mobile devices' window height and width to be changed
+    setTimeout(() => {
+      body.style.height = $(window).height() + "px";
+      body.style.width = $(window).width() + "px";
+    }, 250);
+  })
+</script>

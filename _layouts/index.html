@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+
+<html>
+	
+	{% include head.html %}
+
+	<body class="is-preload">
+
+		<!-- Wrapper-->
+			<div id="wrapper">
+
+				<!-- Nav -->
+				<nav id="nav">
+					<a href="#" class="icon solid fa-home"><span>Home</span></a>
+					<a href="#experience" class="icon solid fa-book-open"><span>Experience & Education</span></a>
+					<a href="#work" class="icon solid fa-folder"><span>View My Work!</span></a>
+					{% for social_info in site.socials %}
+						{% if social_info[1].username %}
+							<a href="{{ social_info[1].link }}" class="icon brands fa-{{ social_info[0] | downcase }}"><span>{{ social_info[1].username }}</span></a>
+						{% endif %}
+					{% endfor %}
+					<a href="mailto: {{ site.email }}" class="icon solid fa-envelope"><span>{{ site.email }}</span></a>
+				</nav>
+				
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Me -->
+							<article id="home" class="panel intro">
+								<header>
+									<h1>{{ page.my_name }}</h1>
+									<p> {{ page.my_description }}</p>
+								</header>
+								<div class="jumplink pic">
+									{% if page.profilepic_path %}
+										<img src="{{ page.profilepic_path }}" alt="" />
+									{% else %}
+										<img src="/assets/images/me.jpg" alt="" />
+									{% endif %}
+								</div>
+							</article>
+							
+						<!-- Experience and Education -->
+						<article id="experience" class="panel">
+							
+							<header><h2>My Experience and Education</h2></header>
+
+							<div id="timeline_container">
+								<div id="timeline"></div>
+								<div id="events_container">
+									
+									{% assign sortedEvents = site.my_experience_education | sort: 'date' | reverse %}
+									{% assign timelineYear = 3000 %}
+									<!-- One individual Event-->
+    								{% for event in sortedEvents %}
+										{% if event.year < timelineYear %}
+											<div class="year_marker">{{ event.year }}</div>
+											{% assign timelineYear = event.year %}
+										{% endif %}
+										<div class="timeline_event">
+											<div class="event_marker"></div>
+											<div class="event_information">
+												<h1 class="event_title">{{ event.name }}</h1>
+												<div class="icon solid fa-{{ event.icon_name }}" style="color: gray;">    {{ event.type }}</div>
+												{{ event.content }}
+											</div>
+										</div>
+									{% endfor %}
+									<!---->
+
+								</div>
+							</div>
+						</article>
+
+						<!-- Work -->
+							<article id="work" class="panel">
+								<header>
+									<h2>My Projects</h2>
+								</header>
+								<p>
+									{{ page.work_description }}
+								</p>
+								<section>
+									<div class="row">
+										{% for project in site.my_projects %}
+										<!-- <div class="col-4 col-6-medium col-12-small"> -->
+										<div class="col-6-xlarge col-6-large col-6-medium col-12-small">
+											<video loop muted playsinline preload class="image fit proj_vid">
+												<source src="{{ project.thumbnail }}" type="video/mp4">
+											</video>
+											<h3>{{ project.name }}</h3> 
+											<div class="proj_desc">{{ project.description }}</div>
+										</div>
+										{% endfor %}
+									</div>
+								</section>
+							</article>
+					</div>
+
+					<!-- Footer -->
+					{% include footer.html %}
+
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
+			
+			<script src="{{ site.baseurl }}/assets/js/sticky_nav_bar.js"></script>
+			<script src="{{ site.baseurl }}/assets/js/project_autoplay.js"></script>
+			<script src="{{ site.baseurl }}/assets/js/timeline_height.js"></script>
+			
+			<script src="{{ site.baseurl }}/assets/js/browser.min.js"></script>
+			<script src="{{ site.baseurl }}/assets/js/breakpoints.min.js"></script>
+			<script src="{{ site.baseurl }}/assets/js/util.js"></script>
+			<script src="{{ site.baseurl }}/assets/js/main.js"></script>
+
+	</body>
+</html>

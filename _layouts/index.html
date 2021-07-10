@@ -11,15 +11,15 @@
 
 				<!-- Nav -->
 				<nav id="nav">
-					<a href="#" class="icon solid fa-home"><span>Home</span></a>
-					<a href="#experience" class="icon solid fa-book-open"><span>Experience & Education</span></a>
-					<a href="#work" class="icon solid fa-folder"><span>View My Work!</span></a>
+					<a href="#" class="icon solid fa-home" aria-label="Home"><span>Home</span></a>
+					<a href="#experience" class="icon solid fa-book-open" aria-label="Experience and Education"><span>Experience & Education</span></a>
+					<a href="#work" class="icon solid fa-folder" aria-label="Projects"><span>View My Work!</span></a>
 					{% for social_info in site.socials %}
 						{% if social_info[1].username %}
-							<a href="{{ social_info[1].link }}" class="icon brands fa-{{ social_info[0] | downcase }}"><span>{{ social_info[1].username }}</span></a>
+							<a href="{{ social_info[1].link }}" class="icon brands fa-{{ social_info[0] | downcase }}" aria-label="{{ social_info[0] }}"><span>{{ social_info[1].username }}</span></a>
 						{% endif %}
 					{% endfor %}
-					<a href="mailto: {{ site.email }}" class="icon solid fa-envelope"><span>{{ site.email }}</span></a>
+					<a href="mailto: {{ site.email }}" class="icon solid fa-envelope" aria-label="Email"><span>{{ site.email }}</span></a>
 				</nav>
 				
 				<!-- Main -->

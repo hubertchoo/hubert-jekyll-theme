@@ -31,15 +31,14 @@
 				var href = $(this).attr('href');
 
 				// Not a panel link? Bail.
-				// Commented out as it causes bug
-				/*
+				
 					if (href.charAt(0) != '#'){
 						return;
 					}
 				
 					if ($panels.filter(href).length == 0)
 						return;
-				*/
+				
 				// Prevent default.
 					event.preventDefault();
 					event.stopPropagation();

@@ -82,7 +82,8 @@
 								</p>
 								<section>
 									<div class="row">
-										{% for project in site.my_projects %}
+										{% assign projects = site.my_projects | sort: "sort_order" %}
+										{% for project in projects %}
 										<!-- <div class="col-4 col-6-medium col-12-small"> -->
 										<div class="col-6-xlarge col-6-large col-6-medium col-12-small">
 											<video loop muted playsinline preload class="image fit proj_vid">

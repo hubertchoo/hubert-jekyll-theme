@@ -2,6 +2,12 @@
 
 This is Stellar, my custom Jekyll theme. It is built on top of 'Astral' by HTML5 Up.
 
+![Stellar Homepage](README_img/stellar_home.png)
+![Stellar Experience](README_img/stellar_experience.png)
+![Stellar Projects](README_img/stellar_projects.png)
+
+You can also interact with it at https://hubertchoo.github.io/.
+
 # Installing the theme
 
 You can use this Jekyll theme as a remote theme without need for installation.

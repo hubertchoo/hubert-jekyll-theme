@@ -1,5 +1,7 @@
 <head>
-	{% include google_analytics.html %}
+	{% if site.google_analytics_id %}
+		{% include google_analytics.html %}
+	{% endif %}
 	<title>{{ site.title }}</title>
 	{% seo %}
 	<meta charset="utf-8" />

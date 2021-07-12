@@ -57,6 +57,7 @@ socials:
     link:
 
 google_analytics_id:
+google_analytics_domain:
 
 # Build settings
 theme: #my remote theme

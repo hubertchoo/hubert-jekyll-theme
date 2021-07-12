@@ -54,7 +54,7 @@ Store your MP4 project thumbnail in the `project_thumbnails` directory. The thum
 
 ## Config.YML
 There are also some additional site settings in the `_config.yml` provided.
-Specifically, an additional configuration feature is the `socials` tag.
+Specifically, an additional configuration feature is the `socials` tag as well as Google Analytics data.
 ```yml
 socials:
   # Those that have blank urls will be ignored
@@ -79,6 +79,9 @@ socials:
     username:
     link:
 
+# Add in these if you are using google analytics
+google_analytics_id:
+google_analytics_domain:
 ```
 Those socials filled in will automatically be added as navigation tabs. You can add your own socials, as long as the names correspond the their Font Awesome icon.
 

@@ -1439,14 +1439,12 @@ a {
 
 	p, ol, dl, table, blockquote, form {
 		margin-bottom: 2em;
-		/*color:#202020;*/
-		font-weight: 300;
+		font-weight: bolder;
 		color: lightgray;
 	}
 
 	ul {
 		margin-bottom: 2em;
-		/*color: #505050;*/
 		color: lightgray;
 	}
 
@@ -1715,6 +1713,7 @@ a {
 
 		ul li {
 			padding-left: 0.5em;
+			font-weight: bolder;
 		}
 
 	ol {

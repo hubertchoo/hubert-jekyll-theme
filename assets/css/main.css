@@ -316,7 +316,7 @@ a {
 					padding-top: 2.5em;
 				}
 
-		@media screen and (max-width: 2400px) {
+		@media screen and (max-width: 2560px) {
 
 			.row {
 				display: flex;
@@ -1335,7 +1335,7 @@ a {
 		line-height: 1.75em;
 	}
 
-		@media screen and (max-width: 2400px) {
+		@media screen and (max-width: 2560px) {
 
 			body, input, textarea, select {
 				font-size: 15pt;
